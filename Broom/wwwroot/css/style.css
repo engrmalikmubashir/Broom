@@ -1,0 +1,28 @@
+﻿
+a:hover {
+    color: #0078FF;
+}
+
+a.navbar-brand,
+.nav-link {
+    color: #fff !important;
+    transition: all .4s ease-in-out;
+}
+
+    a.navbar-brand:hover,
+    .nav-link:hover {
+        color: #077C45 !important;
+        transform: translateY(-2px);
+    }
+
+.nav-pills .navManage {
+    background: #077C45 !important;
+    margin-top: 10px;
+    color: #fff !important;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    outline: none;
+    border: 2px solid #077C45;
+}

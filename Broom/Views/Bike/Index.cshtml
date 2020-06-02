@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Bike>
+
+@{ ViewData["Title"] = "All Models";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h1 class="alert alert-primary text-center">Bikes</h1>
+
+<a asp-action="Create" asp-controller="Bike" class="btn btn-outline-success mb-3"><i class="fas fa-motorcycle"></i> Add New Bike</a>
+
+<table class="table table-hover table-bordered">
+    <tr class="table-warning">
+        <th>Bike Photo</th>
+        <th>Bike Details</th>
+        <th>Price</th>
+        <th>Seller Information</th>
+        <th>Actions</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td><img src="@Html.DisplayFor(m=>item.ImagePath)" width="150" height="100" /></td>
+            <td>
+                <div>
+                    <b>
+                        @Html.DisplayFor(m => item.Make.Name)
+                        (@Html.DisplayFor(m => item.Year))
+                    </b>
+                </div>
+                <div>
+                    <b>Model:</b> @Html.DisplayFor(m => item.BModel.Name)
+
+                </div>
+                <div>
+                    <b>Mileage:</b> @Html.DisplayFor(m => item.Mileage)
+                </div>
+            </td>
+            <td>
+                @Html.DisplayFor(m => item.Price)
+                (@Html.DisplayFor(m => item.Currency))
+            </td>
+            <td>
+                <div>
+                    <b>Name:</b>  @Html.DisplayFor(m => item.SellerName)
+                </div>
+                <div>
+                    <b>Email:</b>  @Html.DisplayFor(m => item.SellerEmail)
+                </div>
+                <div>
+                    <b>Phone:</b>  @Html.DisplayFor(m => item.SellerPhone)
+                </div>
+            </td>
+            <partial name="_TableButtonPartial" model="item.Id" />
+        </tr>
+    }
+
+</table>

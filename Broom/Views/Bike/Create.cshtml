@@ -1,0 +1,97 @@
+﻿@using Broom.Extensions
+@model Broom.Models.ViewModels.BikeViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!--
+<h1>Add New Model</h1>
+-->
+<div class="col-md-6 offset-md-3 my-5">
+    <div class="card border-success rounded shadow-lg p-3">
+        <div class="card-body">
+            <form method="post" asp-action="Create" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Makes"></label>
+                    <select class="custom-select" asp-for="Bike.MakeID" asp-items="Model.Makes.ToSelectListItem()"></select>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Bike.ImagePath"></label>
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="files" id="inputGroupFile02">
+                            <label class="custom-file-label" for="inputGroupFile02" asp-for="Bike.ImagePath">Choose file</label>
+                        </div>
+                        <!--
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                        </div>
+                        -->
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="BModels"></label>
+                    <select class="custom-select" asp-for="Bike.BModelID" asp-items="Model.BModels.ToSelectListItem()"></select>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Bike.Year"></label>
+                    <input asp-for="Bike.Year" class="form-control" placeholder="Enter Model Of Bike" />
+                    <span class="text-danger" asp-validation-for="Bike.Year"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Bike.Mileage"></label>
+                    <input asp-for="Bike.Mileage" class="form-control" placeholder="Enter Model Of Bike" />
+                    <span class="text-danger" asp-validation-for="Bike.Mileage"></span>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-6">
+                        <label class="font-weight-bold" asp-for="Bike.Price"></label>
+                        <input asp-for="Bike.Price" class="form-control" placeholder="Enter Model Of Bike" />
+                        <span class="text-danger" asp-validation-for="Bike.Price"></span>
+                    </div>
+
+                    <div class="form-group col-6">
+                        <label class="font-weight-bold" asp-for="Bike.Currency"></label>
+                        <select class="custom-select" asp-for="Bike.Currency" asp-items="Model.Currencies.ToSelectListItem()"></select>
+                    <span class="text-danger" asp-validation-for="Bike.Currency"></span>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Bike.Features"></label>
+                    <textarea asp-for="Bike.Features" class="form-control" placeholder="Enter Model Of Bike"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Bike.SellerName"></label>
+                    <input asp-for="Bike.SellerName" class="form-control" placeholder="Enter Model Of Bike" />
+                    <span class="text-danger" asp-validation-for="Bike.SellerName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Bike.SellerEmail"></label>
+                    <input asp-for="Bike.SellerEmail" class="form-control" placeholder="Enter Model Of Bike" />
+                    <span class="text-danger" asp-validation-for="Bike.SellerEmail"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="font-weight-bold" asp-for="Bike.SellerPhone"></label>
+                    <input asp-for="Bike.SellerPhone" class="form-control" placeholder="Enter Model Of Bike" />
+                    <span class="text-danger" asp-validation-for="Bike.SellerPhone"></span>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-success" type="submit"><i class="fas fa-motorcycle"></i> Add New Bike</button>
+                    <a asp-action="Index" asp-controller="BModel" class="btn btn-warning"><i class="fas fa-arrow-left"></i> Back</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

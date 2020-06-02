@@ -1,0 +1,48 @@
+﻿a:hover {
+    color: #0078FF;
+}
+
+/*.bg-navbar {
+    background: rgb(229, 229, 229);
+    border-bottom: 2px solid #000;
+}*/
+
+a.navbar-brand,
+.nav-link {
+    color: #eee !important;
+    border-radius: 10px;
+    /*    margin-right: 0.5rem;*/
+    transition: all .4s ease-in-out;
+}
+
+    a.navbar-brand:hover,
+    .nav-link:hover {
+        color: #fff !important;
+        background: #208958;
+        border-radius: 10px;
+    }
+
+.nav-pills .navManage {
+    background: #077C45 !important;
+    margin-top: 10px;
+    color: #fff !important;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: all .4s ease-in-out;
+}
+
+    .nav-pills .navManage:hover {
+        background: #fff !important;
+        margin-top: 10px;
+        color: #077C45 !important;
+        border-radius: 10px;
+        border: 2px solid #077C45;
+    }
+
+.form-control:focus,
+.custom-select:focus
+{
+    box-shadow: none !important;
+    outline: none !important;
+    border: 2px solid #077C45 !important;
+}
